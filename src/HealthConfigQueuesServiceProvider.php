@@ -9,14 +9,18 @@ class HealthConfigQueuesServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->publishes([
-            __DIR__.'/config/config-queues.php' => config_path('config-queues.php'),
-        ], 'config');
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/config-queues.php', 'config-queues'
+        );
     }
 
     public function boot()
     {
         if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__.'/../config/config-queues.php' => config_path('config-queues.php'),
+            ], 'config');
+
             $this->commands([
                 ConfigQueuesCommand::class,
             ]);
