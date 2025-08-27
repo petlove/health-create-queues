@@ -110,7 +110,7 @@ class ConfigQueuesCommand extends Command
             ],
         ];
 
-        if (config('config-queues.env') == 'local' || config('config-queues.env') == 'dev') {
+        if (config('app.env') == 'local' || config('app.env') == 'dev') {
             // Localmente usamos o localstack, ele precisa desse endpoint para funcionar
             $config['endpoint'] = config('queue.connections.sqs.endpoint');
         }
