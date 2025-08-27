@@ -5,7 +5,6 @@ namespace Petlove\HealthConfigQueues\Console\Commands;
 use Aws\Sqs\Exception\SqsException;
 use Aws\Sqs\SqsClient;
 use Illuminate\Console\Command;
-use Petlove\HealthConfigQueues\Helper;
 
 class ConfigQueuesCommand extends Command
 {
@@ -31,7 +30,7 @@ class ConfigQueuesCommand extends Command
         $queues = $this->queues();
 
         foreach ($queues as $queue) {
-            $queueName = Helper::formatName($queue['name']);
+            $queueName = $queue['name'];
 
             $queueUrl = $this->queueExists($queueName);
 
