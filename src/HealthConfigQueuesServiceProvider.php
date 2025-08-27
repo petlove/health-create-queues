@@ -19,7 +19,7 @@ class HealthConfigQueuesServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../config/config-queues.php' => config_path('config-queues.php'),
-            ], 'config');
+            ], 'health-config-queues');
 
             $this->commands([
                 ConfigQueuesCommand::class,
