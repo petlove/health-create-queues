@@ -29,6 +29,11 @@ class ConfigQueuesCommand extends Command
     {
         $queues = $this->queues();
 
+        if (empty($queues)) {
+            $this->error('Nenhuma fila configurada, verifique o arquivo config/config-queues.php');
+            return;
+        }
+
         foreach ($queues as $queue) {
             $queueName = $queue['name'];
 
@@ -115,6 +120,6 @@ class ConfigQueuesCommand extends Command
 
     private function queues(): array
     {
-        return config('config-queues.queues', []);
+        return config('config-queues');
     }
 }
