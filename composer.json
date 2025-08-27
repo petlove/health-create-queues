@@ -1,0 +1,29 @@
+{
+    "name": "petlove/health-config-queues",
+    "description": "Pacote para automaticamente criar as filas no SQS",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Alex Juchem",
+            "email": "alex.juchem@petlove.com.br"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "aws/aws-sdk-php": "^3",
+        "illuminate/support": "^10.0|^11.0",
+        "illuminate/console": "^10.0|^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Petlove\\HealthConfigQueues\\": "src/"
+        }
+    },
+    "extra": {
+      "laravel": {
+        "providers": [
+          "Petlove\\HealthConfigQueues\\HealthConfigQueuesServiceProvider"
+        ]
+      }
+    }
+}
