@@ -30,7 +30,8 @@ return [
         'name' => 'bill_paid'
     ],
     [
-        'name' => 'send_email'
+        'name' => 'send_email',
+        'delay' => 45,
     ],
 ];
 ```
