@@ -2,6 +2,7 @@
 
 namespace Petlove\HealthConfigQueues\Console\Commands;
 
+use Aws\Sqs\Exception\SqsException;
 use Aws\Sqs\SqsClient;
 use Illuminate\Console\Command;
 use Petlove\HealthConfigQueues\Helper;
