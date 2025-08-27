@@ -16,7 +16,7 @@ return [
     /**
      * Ambiente
      */
-    'env' => 'dev',
+    'env' => config('app.env', 'dev'),
 
     /**
      * Filas a serem criadas
