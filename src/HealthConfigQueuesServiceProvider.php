@@ -10,7 +10,7 @@ class HealthConfigQueuesServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/../config/config-queues.php', 'config-queues'
+            __DIR__.'/../config/config-queues.php', 'health-config-queues'
         );
     }
 
