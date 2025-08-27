@@ -7,18 +7,18 @@ Este pacote tem como objetivo automatizar a criação de filas no SQS como base 
 Instalar o pacote usando o composer:
 
 ```bash
-composer require petlove/health-config-queues
+composer require petlove/health-create-queues
 ```
 
 Após instalar o pacote você pode publicar a configuração:
 
 ```bash
-php artisan vendor:publish --tag=health-config-queues
+php artisan vendor:publish --tag=health-create-queues
 ```
 
 ## Configuração
 
-As filas são criadas com base na configuração do arquivo `config/config-queues.php`.
+As filas são criadas com base na configuração do arquivo `config/create-queues.php`.
 
 Exemplo para criar uma fila com o nome `bill_paid` e `send_email`:
 
@@ -50,7 +50,7 @@ Junto do nome da fila podem ser passados algumas configurações aceitas no SQS 
 Depois de configurar as filas você pode rodar o comando:
 
 ```bash
-php artisan health:config-queues
+php artisan health:create-queues
 ```
 
 Esse comando vai criar todas as filas que estão na configuração.
