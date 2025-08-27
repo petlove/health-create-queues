@@ -1,5 +1,5 @@
 {
-    "name": "petlove/health-config-queues",
+    "name": "petlove/health-create-queues",
     "description": "Pacote para automaticamente criar as filas no SQS",
     "type": "library",
     "authors": [
@@ -16,13 +16,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Petlove\\HealthConfigQueues\\": "src/"
+            "Petlove\\HealthCreateQueues\\": "src/"
         }
     },
     "extra": {
       "laravel": {
         "providers": [
-          "Petlove\\HealthConfigQueues\\HealthConfigQueuesServiceProvider"
+          "Petlove\\HealthCreateQueues\\HealthCreateQueuesServiceProvider"
         ]
       }
     }

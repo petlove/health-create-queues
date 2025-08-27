@@ -1,14 +1,14 @@
 <?php
 
-namespace Petlove\HealthConfigQueues\Console\Commands;
+namespace Petlove\HealthCreateQueues\Console\Commands;
 
 use Aws\Sqs\Exception\SqsException;
 use Aws\Sqs\SqsClient;
 use Illuminate\Console\Command;
 
-class ConfigQueuesCommand extends Command
+class CreateQueuesCommand extends Command
 {
-    protected $signature = 'health:config-queues';
+    protected $signature = 'health:create-queues';
 
     protected $description = 'Cria automaticamente filas no SQS';
 
@@ -30,7 +30,7 @@ class ConfigQueuesCommand extends Command
         $queues = $this->queues();
 
         if (empty($queues)) {
-            $this->error('Nenhuma fila configurada, verifique o arquivo config/config-queues.php');
+            $this->error('Nenhuma fila configurada, verifique o arquivo config/create-queues.php');
             return;
         }
 
@@ -120,6 +120,6 @@ class ConfigQueuesCommand extends Command
 
     private function queues(): array
     {
-        return config('config-queues');
+        return config('create-queues');
     }
 }
