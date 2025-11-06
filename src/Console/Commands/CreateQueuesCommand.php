@@ -110,7 +110,7 @@ class CreateQueuesCommand extends Command
             ],
         ];
 
-        if (config('app.env') == 'local' || config('app.env') == 'dev') {
+        if ((config('app.env') == 'local' || config('app.env') == 'dev') && env('GCP', false) === false) {
             // Localmente usamos o localstack, ele precisa desse endpoint para funcionar
             $config['endpoint'] = config('queue.connections.sqs.endpoint');
         }
