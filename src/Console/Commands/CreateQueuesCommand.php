@@ -18,15 +18,10 @@ class CreateQueuesCommand extends Command
 
     private ?SqsClient $sqsClient = null;
 
-    public function __construct()
-    {
-        parent::__construct();
-
-        $this->sqsClient = $this->getSqsClient();
-    }
-
     public function handle()
     {
+        $this->sqsClient = $this->getSqsClient();
+
         $queues = $this->queues();
 
         if (empty($queues)) {
